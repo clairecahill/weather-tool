@@ -30,13 +30,19 @@ public class OpenWeather {
             mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
             mapper.setVisibility(VisibilityChecker.Std.defaultInstance().withFieldVisibility(JsonAutoDetect.Visibility.ANY));
 
-            //validate response data here !!
-
-            if (response.body() != null) {
+            if (response.body() == null) {
+                Logger.printNullApiResponse();
+            }
+            else {
                 WeatherData weatherData = mapper.readValue(response.body().byteStream(), WeatherData.class);
-                Logger.printWeather(weatherData);
+                if (weatherData.responseCode.equals("200")) {
+                    Logger.printWeather(weatherData);
+                } else {
+                    Logger.printBadApiResponse(weatherData);
+                }
             }
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
     }

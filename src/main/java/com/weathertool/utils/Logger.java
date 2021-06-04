@@ -12,7 +12,25 @@ public class Logger {
         System.out.println("********************************************");
     }
 
-    public static void printZipCodeError() {
-        System.out.println("");
+    public static void printZipCodeError(String error) {
+        switch (error) {
+            case "non-numeric":
+                System.out.println("Zip code must contain numeric values only.");
+                break;
+            case "length":
+                System.out.println("Zip code must be 5 digits.");
+                break;
+            default:
+                System.out.println("Please enter a valid zip code.");
+        }
+    }
+
+    public static void printNullApiResponse() {
+        System.out.println("API returned a null response");
+    }
+
+    public static void printBadApiResponse(WeatherData weatherData) {
+        System.out.println("API returned response code " + weatherData.responseCode + " with " +
+                "error message: " + weatherData.message);
     }
 }

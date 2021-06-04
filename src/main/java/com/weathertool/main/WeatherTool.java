@@ -1,8 +1,9 @@
 package com.weathertool.main;
 
 import com.weathertool.apis.OpenWeather;
+import com.weathertool.utils.Logger;
+
 import java.util.*;
-import java.util.regex.Pattern;
 
 public class WeatherTool {
     public static void showWeather() {
@@ -22,12 +23,12 @@ public class WeatherTool {
 
     private static boolean isZipCodeValid(String zipCode) {
         if (!zipCode.matches("[0-9]+")) {
+            Logger.printZipCodeError("non-numeric");
             return false;
         } else if (zipCode.length() != 5) {
+            Logger.printZipCodeError("length");
             return false;
         }
-//        int numZipCode = Integer.parseInt(zipCode);
-
         return true;
     }
 }

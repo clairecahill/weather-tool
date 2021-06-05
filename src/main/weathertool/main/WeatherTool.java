@@ -11,7 +11,7 @@ public class WeatherTool {
         OpenWeather.getCurrentWeather(zipCode);
     }
 
-    private static String getZipCode() {
+    public static String getZipCode() {
         Scanner scanner = new Scanner(System.in);
         String zipCode;
         do {

@@ -24,8 +24,8 @@ Clone the project with git clone https://github.com/clairecahill/weather-tool.gi
 ### Prerequisites 
 * Install Java on your local machine [Windows download](https://java.com/en/download/)
 * Install Maven on your local machine [Download](https://maven.apache.org/download.cgi)
-** Follow instructions on the README to complete the install
-** Run 'mvn -version' to confirm a successful install. The Maven version should print, in addition to the Java version
+  * Follow instructions on the README to complete the install
+  * Run 'mvn -version' to confirm a successful install. The Maven version should print, in addition to the Java version
 
 ### IntelliJ
 * Load the project in IntelliJ
@@ -35,7 +35,7 @@ Clone the project with git clone https://github.com/clairecahill/weather-tool.gi
 ### Command line
 * Navigate to the location of the project root directory (weather-tools)
 * To run source code
-**  mvn compile
-** mvn exec:java -Dexec.mainClass=main.Main
+  *  mvn compile
+  * mvn exec:java -Dexec.mainClass=main.Main
 * To run tests 
-** mvn clean test
+  * mvn clean test

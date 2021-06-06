@@ -20,6 +20,8 @@ This is a Java project using Maven. It utilizes OkHttp for REST API operations, 
 
 Clone the project with git clone https://github.com/clairecahill/weather-tool.git
 <br/>
+Enter your API key in config.properties (no quotes, just the key)
+<br/>
 
 ### Prerequisites 
 * Install Java on your local machine [Windows download](https://java.com/en/download/)

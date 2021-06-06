@@ -1,4 +1,4 @@
-package com.weathertool.utils;
+package utils;
 
 import java.io.*;
 

@@ -1,6 +1,6 @@
-package com.weathertool.utils;
+package utils;
 
-import com.weathertool.apis.data.WeatherData;
+import apis.data.WeatherData;
 
 public class Logger {
     public static void printWeather(WeatherData data) {

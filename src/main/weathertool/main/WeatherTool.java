@@ -1,7 +1,7 @@
-package com.weathertool.main;
+package main;
 
-import com.weathertool.apis.OpenWeather;
-import com.weathertool.utils.Logger;
+import apis.OpenWeather;
+import utils.Logger;
 
 import java.util.*;
 
@@ -15,7 +15,7 @@ public class WeatherTool {
         Scanner scanner = new Scanner(System.in);
         String zipCode;
         do {
-            System.out.println("Enter a zipcode: ");
+            System.out.println("Enter a zipcode:");
             zipCode = scanner.nextLine();
         } while(!isZipCodeValid(zipCode));
         return zipCode;

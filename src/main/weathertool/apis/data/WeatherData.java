@@ -1,4 +1,4 @@
-package com.weathertool.apis.data;
+package apis.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

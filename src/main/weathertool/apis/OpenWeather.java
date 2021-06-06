@@ -1,14 +1,14 @@
-package com.weathertool.apis;
+package apis;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.introspect.VisibilityChecker;
 
-import com.weathertool.apis.data.WeatherData;
+import apis.data.WeatherData;
 
-import com.weathertool.utils.FileUtils;
-import com.weathertool.utils.Logger;
+import utils.FileUtils;
+import utils.Logger;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -16,7 +16,7 @@ import okhttp3.Response;
 public class OpenWeather {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static void getCurrentWeather(String zipcode) {
+    public static WeatherData getCurrentWeather(String zipcode) {
         String apiKey = FileUtils.getApiKey();
 
         OkHttpClient client = new OkHttpClient();
@@ -40,10 +40,12 @@ public class OpenWeather {
                 } else {
                     Logger.printBadApiResponse(weatherData);
                 }
+                return weatherData;
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 }

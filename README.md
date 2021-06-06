@@ -32,7 +32,7 @@ Clone the project with git clone https://github.com/clairecahill/weather-tool.gi
 * On the left hand project navigator, open src/main/weathertool/main, right click on Main.java, select "Run Main.main()"
 * To run the unit tests, right click on the src/test folder and click "Run All Tests"
 
-### Terminal
+### Command line
 * Navigate to the location of the project root directory (weather-tools)
 * To run source code
 **  mvn compile

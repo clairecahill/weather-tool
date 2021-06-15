@@ -16,13 +16,21 @@ import okhttp3.Response;
 public class OpenWeather {
     private static final ObjectMapper mapper = new ObjectMapper();
 
-    public static WeatherData getCurrentWeather(String zipcode) {
+    /***********************************************************
+     * Calls the OpenWeatherMap Current Weather API with the validated
+     * zip code. Uses OkHTTP to make the API call and Jackson to
+     * parse the data into a custom WeatherData object
+     * TODO: expand API to work with zip codes outside the US
+     * @param zipCode - 5 digit zip code from WeatherTool class
+     * @return - WeatherData object with data from the API call
+     ***********************************************************/
+    public static WeatherData getCurrentWeather(String zipCode) {
         String apiKey = FileUtils.getApiKey();
 
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
                 .url("https://api.openweathermap.org/data/2.5/weather?" +
-                        "zip=" + zipcode + ",us" +
+                        "zip=" + zipCode + ",us" +
                         "&units=imperial&appid=" + apiKey)
                 .build();
         try {
